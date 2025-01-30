@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NpvCalculator.Core.Entities;
 
-namespace NpvCalculator.Infrastracture.Interfaces
+namespace NpvCalculator.Core.Interfaces
 {
     public interface IApplicationDbContext
     {

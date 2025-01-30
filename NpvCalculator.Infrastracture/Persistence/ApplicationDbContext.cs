@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using NpvCalculator.Core.Entities;
-using NpvCalculator.Infrastracture.Interfaces;
+using NpvCalculator.Core.Interfaces;
 
 namespace NpvCalculator.Infrastracture.Persistence
 {
