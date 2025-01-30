@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NpvCalculator.Application\NpvCalculator.Application.csproj" />
+    <ProjectReference Include="..\NpvCalculator.Infrastracture\NpvCalculator.Infrastracture.csproj" />
+  </ItemGroup>
+
+</Project>
