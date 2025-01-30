@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.2.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\NpvCalculator.Application\NpvCalculator.Application.csproj" />
     <ProjectReference Include="..\NpvCalculator.Infrastracture\NpvCalculator.Infrastracture.csproj" />
   </ItemGroup>
