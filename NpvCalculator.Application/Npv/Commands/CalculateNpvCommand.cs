@@ -4,6 +4,6 @@ namespace NpvCalculator.Application.Npv.Commands
 {
     public record CalculateNpvCommand(
         decimal InitialInvestment, 
-        decimal DiscountRateIncrement, 
+        decimal DiscountRate, 
         List<decimal> CashFlows) : IRequest<decimal>;
 }
