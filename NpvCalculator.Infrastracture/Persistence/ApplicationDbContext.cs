@@ -1,5 +1,4 @@
-﻿using System.Reflection;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using NpvCalculator.Core.Entities;
 using NpvCalculator.Core.Interfaces;
 
@@ -16,7 +15,7 @@ namespace NpvCalculator.Infrastracture.Persistence
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //modelBuilder.Entity<NpvCalculation>().HasMany(c => c.CashFlows).WithOne().OnDelete(DeleteBehavior.Cascade);
-            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
         }
     }
 }
