@@ -2,7 +2,7 @@
 using NpvCalculator.Core.Entities;
 using NpvCalculator.Core.Interfaces;
 
-namespace NpvCalculator.Infrastracture.Persistence
+namespace NpvCalculator.Infrastructure.Persistence
 {
     public class ApplicationDbContext : DbContext, IApplicationDbContext
     {

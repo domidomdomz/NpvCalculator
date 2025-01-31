@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NpvCalculator.Core.Interfaces;
-using NpvCalculator.Infrastracture.Persistence;
+using NpvCalculator.Infrastructure.Persistence;
 
-namespace NpvCalculator.Infrastracture
+namespace NpvCalculator.Infrastructure
 {
     public static class DependencyInjection
     {

@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NpvCalculator.Core", "NpvCa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NpvCalculator.Application", "NpvCalculator.Application\NpvCalculator.Application.csproj", "{B53381B0-02FB-4173-85F4-3FE4F6A2BAF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NpvCalculator.Infrastracture", "NpvCalculator.Infrastracture\NpvCalculator.Infrastracture.csproj", "{3929E8ED-2F54-473B-B2C6-81B9E3CFACE8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NpvCalculator.Infrastructure", "NpvCalculator.Infrastructure\NpvCalculator.Infrastructure.csproj", "{3929E8ED-2F54-473B-B2C6-81B9E3CFACE8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NpvCalculator.Api", "NpvCalculator.Api\NpvCalculator.Api.csproj", "{4EAE12DF-284B-4C42-9FF1-9D801D006036}"
 EndProject
