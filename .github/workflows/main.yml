@@ -2,8 +2,8 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - main
-
+      - master
+  workflow_dispatch: # Add this line
 jobs:
   build:
     runs-on: ubuntu-latest
