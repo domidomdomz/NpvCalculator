@@ -1,10 +1,9 @@
 # NpvCalculator
 
+Net Present Value calculator - implement the app using .NET 8
 
 
-# EF Core Migrations
-
-## Getting Started
+## EF Core Migrations
 
 To perform EF Core migrations, follow these steps:
 
