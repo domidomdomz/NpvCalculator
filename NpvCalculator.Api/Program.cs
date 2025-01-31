@@ -1,3 +1,4 @@
+using NpvCalculator.Api.Middlewares;
 using NpvCalculator.Application;
 using NpvCalculator.Infrastructure;
 
@@ -34,6 +35,10 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 //app.UseAuthorization();
+
+// Add exception handling middleware
+app.UseMiddleware<ExceptionHandlingMiddleware>();
+
 app.MapControllers();
 app.Run();
 

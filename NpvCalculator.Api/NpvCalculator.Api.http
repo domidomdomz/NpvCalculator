@@ -14,3 +14,94 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 
 243.4260
+
+###
+
+### Unhappy Path: InitialInvestment is zero
+POST {{NpvCalculator.Api_HostAddress}}/api/npv
+Content-Type: application/json
+
+{
+  "InitialInvestment": 0,
+  "DiscountRate": 0.1,
+  "CashFlows": [500, 500, 500]
+}
+
+### Expected response
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+  "Message": "Validation failed",
+  "Errors": [
+    { "PropertyName": "InitialInvestment", "ErrorMessage": "Initial investment must be positive" }
+  ]
+}
+###
+
+### Unhappy Path: DiscountRate is negative
+POST {{NpvCalculator.Api_HostAddress}}/api/npv
+Content-Type: application/json
+
+{
+  "InitialInvestment": 100,
+  "DiscountRate": -0.01,
+  "CashFlows": [500, 500, 500]
+}
+
+### Expected response
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+  "Message": "Validation failed",
+  "Errors": [
+    { "PropertyName": "DiscountRate", "ErrorMessage": "Discount rate must be between 0% and 100%" }
+  ]
+}
+
+###
+
+### Unhappy Path: CashFlows is empty
+POST {{NpvCalculator.Api_HostAddress}}/api/npv
+Content-Type: application/json
+
+{
+  "InitialInvestment": 100,
+  "DiscountRate": 0.1,
+  "CashFlows": []
+}
+
+### Expected response
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+  "Message": "Validation failed",
+  "Errors": [
+    { "PropertyName": "CashFlows", "ErrorMessage": "At least one cash flow required" }
+  ]
+}
+
+###
+
+### Unhappy Path: Any CashFlow is negative
+POST {{NpvCalculator.Api_HostAddress}}/api/npv
+Content-Type: application/json
+
+{
+  "InitialInvestment": 100,
+  "DiscountRate": 0.1,
+  "CashFlows": [500, -500, 500]
+}
+
+### Expected response
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+  "Message": "Validation failed",
+  "Errors": [
+    { "PropertyName": "CashFlows", "ErrorMessage": "All cash flows must be positive" }
+  ]
+}
