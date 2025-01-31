@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using FluentValidation;
+using NpvCalculator.Application.Npv.Validators;
+using MediatR;
 
 namespace NpvCalculator.Application
 {
@@ -11,7 +13,10 @@ namespace NpvCalculator.Application
                 cfg.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly));
 
             // Configure FluentValidation
-            services.AddValidatorsFromAssembly(typeof(DependencyInjection).Assembly);
+            services.AddValidatorsFromAssemblyContaining<CalculateNpvCommandValidator>();
+
+            // Add MediatR Pipeline Behaviors
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 
             return services;
         }
