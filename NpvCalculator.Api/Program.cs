@@ -1,5 +1,5 @@
 using NpvCalculator.Application;
-using NpvCalculator.Infrastracture;
+using NpvCalculator.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,3 +36,6 @@ app.UseHttpsRedirection();
 //app.UseAuthorization();
 app.MapControllers();
 app.Run();
+
+// added this to access this class in Integration Tests
+public partial class Program { }
