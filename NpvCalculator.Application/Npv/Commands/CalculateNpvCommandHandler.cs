@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using NpvCalculator.Application.Services;
 using NpvCalculator.Core.Entities;
 using NpvCalculator.Core.Interfaces;
 
@@ -14,7 +15,7 @@ namespace NpvCalculator.Application.Npv.Commands
 
         public async Task<decimal> Handle(CalculateNpvCommand request, CancellationToken cancellationToken)
         {
-            var npv = CalculateNpv(request.InitialInvestment, request.DiscountRate, request.CashFlows);
+            var npv = NpvCalculatorService.CalculateNpv(request.InitialInvestment, request.DiscountRate, request.CashFlows);
 
             var calculation = new NpvCalculation
             {
@@ -33,16 +34,5 @@ namespace NpvCalculator.Application.Npv.Commands
 
             return npv;
         }
-
-        private static decimal CalculateNpv(decimal initialInvestment, decimal discountRate, List<decimal> cashFlows)
-        {
-            decimal npv = -initialInvestment;
-            for (int i = 0; i < cashFlows.Count; i++)
-            {
-                npv += cashFlows[i] / (decimal)Math.Pow(1 + (double)discountRate, i + 1);
-            }
-            return Math.Round(npv, 4);
-        }
-
     }
 }

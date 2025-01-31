@@ -20,6 +20,7 @@ namespace NpvCalculator.Application.Npv.Queries
             return await _context.NpvCalculations
                 .Include(n => n.CashFlows)
                 .OrderByDescending(n => n.CalculatedAt)
+                .AsNoTracking()
                 .ToListAsync(cancellationToken);
         }
     }
