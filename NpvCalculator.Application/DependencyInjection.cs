@@ -10,6 +10,7 @@ namespace NpvCalculator.Application
             services.AddMediatR(cfg =>
                 cfg.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly));
 
+            // Configure FluentValidation
             services.AddValidatorsFromAssembly(typeof(DependencyInjection).Assembly);
 
             return services;
