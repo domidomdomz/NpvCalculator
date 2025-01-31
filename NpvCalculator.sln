@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NpvCalculator.Core", "NpvCalculator.Core\NpvCalculator.Core.csproj", "{65F839DF-D960-40DF-A4E6-D321F498DD00}"
 EndProject
@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NpvCalculator.Application",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NpvCalculator.Infrastracture", "NpvCalculator.Infrastracture\NpvCalculator.Infrastracture.csproj", "{3929E8ED-2F54-473B-B2C6-81B9E3CFACE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NpvCalculator.Tests", "NpvCalculator.Tests\NpvCalculator.Tests.csproj", "{A09271EC-9895-4D51-BD2F-9AC994651637}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NpvCalculator.Api", "NpvCalculator.Api\NpvCalculator.Api.csproj", "{4EAE12DF-284B-4C42-9FF1-9D801D006036}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NpvCalculator.Tests", "NpvCalculator.Tests\NpvCalculator.Tests.csproj", "{59CFE3F3-D451-41FE-B128-F627FC36F6F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,14 +31,14 @@ Global
 		{3929E8ED-2F54-473B-B2C6-81B9E3CFACE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3929E8ED-2F54-473B-B2C6-81B9E3CFACE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3929E8ED-2F54-473B-B2C6-81B9E3CFACE8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A09271EC-9895-4D51-BD2F-9AC994651637}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A09271EC-9895-4D51-BD2F-9AC994651637}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A09271EC-9895-4D51-BD2F-9AC994651637}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A09271EC-9895-4D51-BD2F-9AC994651637}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4EAE12DF-284B-4C42-9FF1-9D801D006036}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4EAE12DF-284B-4C42-9FF1-9D801D006036}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4EAE12DF-284B-4C42-9FF1-9D801D006036}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4EAE12DF-284B-4C42-9FF1-9D801D006036}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59CFE3F3-D451-41FE-B128-F627FC36F6F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59CFE3F3-D451-41FE-B128-F627FC36F6F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59CFE3F3-D451-41FE-B128-F627FC36F6F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59CFE3F3-D451-41FE-B128-F627FC36F6F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
