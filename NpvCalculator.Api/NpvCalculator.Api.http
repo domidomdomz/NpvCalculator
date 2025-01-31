@@ -1,6 +1,16 @@
 @NpvCalculator.Api_HostAddress = http://localhost:5156
 
-GET {{NpvCalculator.Api_HostAddress}}/weatherforecast/
-Accept: application/json
+POST {{NpvCalculator.Api_HostAddress}}/api/npv
+Content-Type: application/json
 
-###
+{
+  "InitialInvestment": 1000,
+  "DiscountRate": 0.1,
+  "CashFlows": [500, 500, 500]
+}
+
+### Expected response
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+243.4260

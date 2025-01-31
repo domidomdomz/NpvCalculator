@@ -8,12 +8,20 @@
 
   <ItemGroup>
     <PackageReference Include="MediatR" Version="12.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\NpvCalculator.Application\NpvCalculator.Application.csproj" />
-    <ProjectReference Include="..\NpvCalculator.Infrastracture\NpvCalculator.Infrastracture.csproj" />
+    <ProjectReference Include="..\NpvCalculator.Infrastructure\NpvCalculator.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<InternalsVisibleTo Include="NpvCalculator.Tests" />
   </ItemGroup>
 
 </Project>
