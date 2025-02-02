@@ -1,5 +1,9 @@
 @NpvCalculator.Api_HostAddress = http://localhost:5156
 
+### Get Calculate NPV History
+GET {{NpvCalculator.Api_HostAddress}}/api/npv/history
+
+### Happy Path: Calculate NPV
 POST {{NpvCalculator.Api_HostAddress}}/api/npv
 Content-Type: application/json
 
