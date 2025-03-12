@@ -1,9 +1,21 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
-
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideHttpClient } from '@angular/common/http';
 import { routes } from './app.routes';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MaterialModule  } from './shared/material/material.module';
+import { CalculationRepository } from './core/repositories/calculation.repository';
+import { ApiService } from './core/services/api.service';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideAnimationsAsync()]
+  providers: [
+    provideRouter(routes),
+    provideAnimations(),
+    provideHttpClient(),
+    importProvidersFrom(
+      MaterialModule
+    ),
+    // Provide repository implementation at application level
+    { provide: CalculationRepository, useClass: ApiService }
+  ]
 };
