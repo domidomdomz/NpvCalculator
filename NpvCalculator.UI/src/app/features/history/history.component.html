@@ -1,0 +1,49 @@
+<mat-card class="history-card">
+  <mat-card-header>
+    <mat-card-title>
+      <mat-icon>history</mat-icon>
+      Calculation History
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
+      <!-- Date Column -->
+      <ng-container matColumnDef="calculatedAt">
+        <th mat-header-cell *matHeaderCellDef>Date</th>
+        <td mat-cell *matCellDef="let calc">{{ calc.calculatedAt | date:'medium' }}</td>
+      </ng-container>
+
+      <!-- Investment Column -->
+      <ng-container matColumnDef="initialInvestment">
+        <th mat-header-cell *matHeaderCellDef>Investment</th>
+        <td mat-cell *matCellDef="let calc">{{ calc.initialInvestment | currency }}</td>
+      </ng-container>
+
+      <!-- Rate Column -->
+      <ng-container matColumnDef="discountRate">
+        <th mat-header-cell *matHeaderCellDef>Rate</th>
+        <td mat-cell *matCellDef="let calc">{{ calc.discountRate | percent:'1.2-2' }}</td>
+      </ng-container>
+
+      <!-- Result Column -->
+      <ng-container matColumnDef="result">
+        <th mat-header-cell *matHeaderCellDef>Result</th>
+        <td mat-cell *matCellDef="let calc">{{ calc.result | currency }}</td>
+      </ng-container>
+
+      <!-- Cashflows Column -->
+      <ng-container matColumnDef="cashFlows">
+        <th mat-header-cell *matHeaderCellDef>Cashflows</th>
+        <td mat-cell *matCellDef="let calc">
+          <ul>
+            <li *ngFor="let cashFlow of calc.cashFlows">{{ cashFlow | currency }}</li>
+          </ul>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </mat-card-content>
+</mat-card>
