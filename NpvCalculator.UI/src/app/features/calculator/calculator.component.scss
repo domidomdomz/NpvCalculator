@@ -1,0 +1,71 @@
+/* calculator.component.scss */
+
+.calculator-card {
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .mat-card-header {
+    background-color: #1976d2;
+    color: white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .mat-card-title {
+    display: flex;
+    align-items: center;
+  }
+  
+  .mat-card-title mat-icon {
+    margin-right: 8px;
+  }
+  
+  .form-grid {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .cash-flows {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .cash-flow-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+  
+  .result-card {
+    margin-top: 16px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+  }
+  
+  .result-display {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+  }
+  
+  .result-display mat-icon {
+    margin-right: 8px;
+    color: green;
+  }
+  
+  .mat-progress-bar {
+    margin-top: 16px;
+  }
+  
