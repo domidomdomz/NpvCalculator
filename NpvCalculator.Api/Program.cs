@@ -24,18 +24,25 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddControllers();
 
 // Add CORS policy
+var allowedOrigins = builder.Configuration.GetSection("AllowedOrigins").Get<string[]>();
+if (allowedOrigins == null || allowedOrigins.Length == 0)
+{
+    throw new InvalidOperationException("AllowedOrigins configuration is missing or empty.");
+}
+
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowSpecificOrigin",
-        builder => builder.WithOrigins("http://localhost:4200")
+    options.AddPolicy("ConfiguredOriginsWithPreflight",
+        builder => builder.WithOrigins(allowedOrigins)
                           .AllowAnyHeader()
-                          .AllowAnyMethod());
+                          .AllowAnyMethod()
+                          .SetPreflightMaxAge(TimeSpan.FromMinutes(10)));
 });
 
 var app = builder.Build();
 
 // Use CORS policy
-app.UseCors("AllowSpecificOrigin");
+app.UseCors("ConfiguredOriginsWithPreflight");
 
 // Configure the HTTP request pipeline.
 app.UseSwagger();
